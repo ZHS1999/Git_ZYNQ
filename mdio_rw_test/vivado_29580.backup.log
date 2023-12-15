@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Dec 15 19:30:59 2023
+# Process ID: 29580
+# Current directory: D:/Desktop/ZYNQ_project/mdio_rw_test
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14968 D:\Desktop\ZYNQ_project\mdio_rw_test\mdio_rw_test.xpr
+# Log file: D:/Desktop/ZYNQ_project/mdio_rw_test/vivado.log
+# Journal file: D:/Desktop/ZYNQ_project/mdio_rw_test\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/APP/VIVADO/Vivado/2018.3/data/ip'.
+update_compile_order -fileset sources_1
+file mkdir D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.srcs/constrs_1
+file mkdir D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.srcs/constrs_1/new
+close [ open D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.srcs/constrs_1/new/mdio_rw_test.xdc w ]
+add_files -fileset constrs_1 D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.srcs/constrs_1/new/mdio_rw_test.xdc
+launch_runs synth_1 -jobs 16
+[Fri Dec 15 19:42:23 2023] Launched synth_1...
+Run output will be captured here: D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 16
+[Fri Dec 15 19:42:55 2023] Launched impl_1...
+Run output will be captured here: D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Fri Dec 15 19:45:26 2023] Launched impl_1...
+Run output will be captured here: D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Fri Dec 15 19:46:48 2023] Launched impl_1...
+Run output will be captured here: D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 19:50:07 2023...

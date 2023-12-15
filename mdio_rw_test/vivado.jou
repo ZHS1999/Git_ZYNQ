@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Dec 15 19:59:42 2023
+# Process ID: 23144
+# Current directory: D:/Desktop/ZYNQ_project/mdio_rw_test
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26336 D:\Desktop\ZYNQ_project\mdio_rw_test\mdio_rw_test.xpr
+# Log file: D:/Desktop/ZYNQ_project/mdio_rw_test/vivado.log
+# Journal file: D:/Desktop/ZYNQ_project/mdio_rw_test\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/ZYNQ_project/mdio_rw_test/mdio_rw_test.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
