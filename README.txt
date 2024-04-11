@@ -1,0 +1,1 @@
+All projects in the library are based on the ZYNQ7020 board, which is used by the author for learning and practicing, and is for reference only. Welcome to exchange and discuss!
