@@ -1,0 +1,1 @@
+The project uses the HLS video library, designs the image grayscale algorithm as an IP core through the VIVADO HLS tool, and designs the PL configuration of ZYNQ7020 in VIVADO. Then, the algorithm's IP core is validated combining with SDK development.
