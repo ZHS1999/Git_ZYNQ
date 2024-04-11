@@ -1,0 +1,248 @@
+16:15:01 INFO  : Registering command handlers for SDK TCF services
+16:15:01 INFO  : Launching XSCT server: xsct.bat -interactive D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\temp_xsdb_launch_script.tcl
+16:15:02 INFO  : XSCT server has started successfully.
+16:15:02 INFO  : Successfully done setting XSCT server connection channel  
+16:15:02 INFO  : Successfully done setting SDK workspace  
+16:15:02 INFO  : Processing command line option -hwspec D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper.hdf.
+18:38:01 INFO  : Registering command handlers for SDK TCF services
+18:38:01 INFO  : Launching XSCT server: xsct.bat -interactive D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\temp_xsdb_launch_script.tcl
+18:38:02 INFO  : XSCT server has started successfully.
+18:38:02 INFO  : Successfully done setting XSCT server connection channel  
+18:38:02 INFO  : Successfully done setting SDK workspace  
+18:38:02 INFO  : Processing command line option -hwspec D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper.hdf.
+18:38:02 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+18:53:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:17 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251A08870' is selected.
+18:53:17 INFO  : 'jtag frequency' command is executed.
+18:53:17 INFO  : Sourcing of 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:53:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1' command is executed.
+18:53:19 INFO  : FPGA configured successfully with bitstream "D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:53:19 INFO  : Context for 'APU' is selected.
+18:53:19 INFO  : Hardware design information is loaded from 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:53:19 INFO  : 'configparams force-mem-access 1' command is executed.
+18:53:19 INFO  : Context for 'APU' is selected.
+18:53:19 INFO  : 'stop' command is executed.
+18:53:19 INFO  : 'ps7_init' command is executed.
+18:53:19 INFO  : 'ps7_post_config' command is executed.
+18:53:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:53:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:20 INFO  : The application 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:20 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1
+fpga -file D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+loadhw -hw D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+dow D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:20 INFO  : Memory regions updated for context APU
+18:53:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:20 INFO  : 'con' command is executed.
+18:53:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+con
+----------------End of Script----------------
+
+18:53:20 INFO  : Launch script is exported to file 'D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov5640_rgb2gray_lcd.elf_on_local.tcl'
+18:56:59 INFO  : Disconnected from the channel tcfchan#1.
+18:57:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:57:00 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251A08870' is selected.
+18:57:00 INFO  : 'jtag frequency' command is executed.
+18:57:00 INFO  : Sourcing of 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:57:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1' command is executed.
+18:57:02 INFO  : FPGA configured successfully with bitstream "D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:57:02 INFO  : Context for 'APU' is selected.
+18:57:03 INFO  : Hardware design information is loaded from 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:57:03 INFO  : 'configparams force-mem-access 1' command is executed.
+18:57:03 INFO  : Context for 'APU' is selected.
+18:57:03 INFO  : 'stop' command is executed.
+18:57:03 INFO  : 'ps7_init' command is executed.
+18:57:03 INFO  : 'ps7_post_config' command is executed.
+18:57:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:57:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:04 INFO  : The application 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:57:04 INFO  : 'configparams force-mem-access 0' command is executed.
+18:57:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1
+fpga -file D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+loadhw -hw D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+dow D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:57:04 INFO  : Memory regions updated for context APU
+18:57:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:04 INFO  : 'con' command is executed.
+18:57:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+con
+----------------End of Script----------------
+
+18:57:04 INFO  : Launch script is exported to file 'D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov5640_rgb2gray_lcd.elf_on_local.tcl'
+18:58:31 INFO  : Disconnected from the channel tcfchan#2.
+18:58:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:58:32 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251A08870' is selected.
+18:58:32 INFO  : 'jtag frequency' command is executed.
+18:58:32 INFO  : Sourcing of 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:58:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1' command is executed.
+18:58:34 INFO  : FPGA configured successfully with bitstream "D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:58:34 INFO  : Context for 'APU' is selected.
+18:58:35 INFO  : Hardware design information is loaded from 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:58:35 INFO  : 'configparams force-mem-access 1' command is executed.
+18:58:35 INFO  : Context for 'APU' is selected.
+18:58:35 INFO  : 'stop' command is executed.
+18:58:35 INFO  : 'ps7_init' command is executed.
+18:58:35 INFO  : 'ps7_post_config' command is executed.
+18:58:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:58:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:35 INFO  : The application 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:58:35 INFO  : 'configparams force-mem-access 0' command is executed.
+18:58:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1
+fpga -file D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+loadhw -hw D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+dow D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:58:35 INFO  : Memory regions updated for context APU
+18:58:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:36 INFO  : 'con' command is executed.
+18:58:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+con
+----------------End of Script----------------
+
+18:58:36 INFO  : Launch script is exported to file 'D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov5640_rgb2gray_lcd.elf_on_local.tcl'
+18:59:15 INFO  : Disconnected from the channel tcfchan#3.
+18:59:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:59:16 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251A08870' is selected.
+18:59:16 INFO  : 'jtag frequency' command is executed.
+18:59:16 INFO  : Sourcing of 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:59:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1' command is executed.
+18:59:18 INFO  : FPGA configured successfully with bitstream "D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:59:18 INFO  : Context for 'APU' is selected.
+18:59:19 INFO  : Hardware design information is loaded from 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:59:19 INFO  : 'configparams force-mem-access 1' command is executed.
+18:59:19 INFO  : Context for 'APU' is selected.
+18:59:19 INFO  : 'stop' command is executed.
+18:59:19 INFO  : 'ps7_init' command is executed.
+18:59:19 INFO  : 'ps7_post_config' command is executed.
+18:59:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:59:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:19 INFO  : The application 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:59:19 INFO  : 'configparams force-mem-access 0' command is executed.
+18:59:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1
+fpga -file D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+loadhw -hw D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+dow D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:59:19 INFO  : Memory regions updated for context APU
+18:59:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:19 INFO  : 'con' command is executed.
+18:59:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+con
+----------------End of Script----------------
+
+18:59:19 INFO  : Launch script is exported to file 'D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov5640_rgb2gray_lcd.elf_on_local.tcl'
+19:00:05 INFO  : Disconnected from the channel tcfchan#4.
+19:00:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:00:06 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251A08870' is selected.
+19:00:06 INFO  : 'jtag frequency' command is executed.
+19:00:06 INFO  : Sourcing of 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:00:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1' command is executed.
+19:00:08 INFO  : FPGA configured successfully with bitstream "D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+19:00:08 INFO  : Context for 'APU' is selected.
+19:00:09 INFO  : Hardware design information is loaded from 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:00:09 INFO  : 'configparams force-mem-access 1' command is executed.
+19:00:09 INFO  : Context for 'APU' is selected.
+19:00:09 INFO  : 'stop' command is executed.
+19:00:09 INFO  : 'ps7_init' command is executed.
+19:00:09 INFO  : 'ps7_post_config' command is executed.
+19:00:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:00:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:00:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:00:09 INFO  : The application 'D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:00:09 INFO  : 'configparams force-mem-access 0' command is executed.
+19:00:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870" && level==0} -index 1
+fpga -file D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+loadhw -hw D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+dow D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/ov5640_rgb2gray_lcd/Debug/ov5640_rgb2gray_lcd.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:00:10 INFO  : Memory regions updated for context APU
+19:00:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:00:10 INFO  : 'con' command is executed.
+19:00:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
+con
+----------------End of Script----------------
+
+19:00:10 INFO  : Launch script is exported to file 'D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_ip_test\ov5640_rgb2gray_ip_test.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov5640_rgb2gray_lcd.elf_on_local.tcl'
+19:20:04 INFO  : Disconnected from the channel tcfchan#5.

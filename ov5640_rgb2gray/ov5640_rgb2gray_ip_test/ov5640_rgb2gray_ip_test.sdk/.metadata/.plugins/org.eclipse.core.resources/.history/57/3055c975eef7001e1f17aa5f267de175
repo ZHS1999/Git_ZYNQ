@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "xil_types.h"
+#include "xil_cache.h"
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xaxivdma.h"
+#include "xaxivdma_i.h"
+#include "display_ctrl/display_ctrl.h"
+#include "vdma_api/vdma_api.h"
+#include "emio_sccb_cfg/emio_sccb_cfg.h"
+#include "ov5640/ov5640_init.h"
+#include "xov5640_rgb2gray.h"
+
+//宏定义
+#define BYTES_PIXEL 3
+#define FRAME_BUFFER_NUM 3
+#define DYNCLK_BASEADDR XPAR_AXI_DYNCLK_0_BASEADDR
+#define VDMA_ID XPAR_AXIVDMA_0_DEVICE_ID
+#define DISP_VTC_ID XPAR_AXI_GPIO_0_DEVICE_ID
+//使用AXI GPIO(LCD_ID)器件ID
+#define AXI_GPIO_0_ID XPAR_AXI_GPIO_0_DEVICE_ID
+//使用AXI GPIO(lcd_id) 通道1
+#define AXI_GPIO_0_CHANEL 1
+
+//全局变量
+//frame buffer的起始地址
+unsigned int const fame_buffer_addr = (XPAR_PS7_DDR_0_S_AXI_BASEADDR + 0X1000000);
+
+XAxiVdma vdma;
+DisplayCtrl dispCtrl;
+XGpio axi_gpio_inst;
+XOv5640_rgb2gray rgb2gray_inst;
+VideoMode vd_mode;
+unsigned int lcd_id;
+
+int main(void)
+{
+	u32 status;
+	u16 cmos_h_pixel;
+	u16 cmos_v_pixel;
+	u16 total_h_pixel;
+	u16 total_v_pixel;
+
+	XGpio_Initialize(&axi_gpio_inst,AXI_GPIO_0_ID);
+	XGpio_SetDataDirection(&axi_gpio_inst,AXI_GPIO_0_CHANEL,0X07);
+	lcd_id = LTDC_PanelID_Read(&axi_gpio_inst,AXI_GPIO_0_CHANEL);
+	XGpio_SetDataDirection(&axi_gpio_inst,AXI_GPIO_0_CHANEL,0x00);
+	xil_printf("LCD ID: %x\r\n",lcd_id);
+
+	//根据获取的LCD的ID号来进行ov5640显示分辨率参数的选择
+	switch(lcd_id){
+		case 0x4342:
+			cmos_h_pixel = 480;
+			cmos_v_pixel = 272;
+			total_h_pixel = 1800;
+			total_v_pixel = 1000;
+			break;
+		case 0x4384:
+			break;
+		case 0x7084:
+			break;
+		case 0x7016:
+			break;
+		case 0x1018:
+			break;
+		default:
+			break;
+
+	}
+
+	emio_init();
+	status = pv5640_init(cmos_h_pixel)
+}
+
+
+
+
+
+
+
+
+
+
+
+

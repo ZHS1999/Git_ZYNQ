@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Thu Apr 11 18:35:51 2024
+# Process ID: 13164
+# Current directory: D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/webtalk/webtalk.log
+# Journal file: D:/Desktop/Project/ZYNQ_Highlevel_Synthesis/ov5640_rgb2gray/ov5640_rgb2gray_ip_test/ov5640_rgb2gray_ip_test.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

@@ -1,0 +1,8 @@
+19:00:01 **** Incremental Build of configuration Debug for project ov5640_rgb2gray_lcd ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+
+19:00:01 Build Finished (took 164ms)
+

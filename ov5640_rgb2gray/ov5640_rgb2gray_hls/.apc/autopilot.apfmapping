@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="ov5640_rgb2gray.cpp" path="D:\Desktop\Project\ZYNQ_Highlevel_Synthesis\ov5640_rgb2gray\ov5640_rgb2gray_hls\src\ov5640_rgb2gray.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

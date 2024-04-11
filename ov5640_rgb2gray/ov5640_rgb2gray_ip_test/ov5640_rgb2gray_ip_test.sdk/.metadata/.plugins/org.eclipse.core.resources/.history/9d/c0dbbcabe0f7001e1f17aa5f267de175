@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "xil_types.h"
+#include "xil_cache.h"
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xaxivdma.h"
+#include "xaxivdma_i.h"
+#include "display_ctrl/display_ctrl.h"
+#include "vdma_api/vdma_api.h"
+#include "emio_sccb_cfg/emio_sccb_cfg.h"
+#include "ov5640/ov5640_init.h"
+#include "xov5640_rgb2gray.h"
+
+//∫Í∂®“Â
