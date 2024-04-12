@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'CvtColor.1' to 'CvtColor_1'." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:40.474+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block_Mat.exit49_pro' to 'Block_Mat_exit49_pro'." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:40.460+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[5]' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:40.453+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[4]' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.894+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[3]' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.891+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'Block_Mat.exit49_proc' to 'Block_Mat.exit49_pro' (ov5640_sobel_hls/src/ov5640_sobel.cpp:15)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.888+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::AXIvideo2Mat&lt;24, 800, 1280, 4096>' to 'AXIvideo2Mat' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_io.h:49:9)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.770+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::CvtColor&lt;HLS_GRAY2RGB, 0, 4096, 800, 1280>' to 'CvtColor.1' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:672:39)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.767+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::CvtColor&lt;HLS_RGB2GRAY, 4096, 0, 800, 1280>' to 'CvtColor' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:409:39)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.764+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Filter2D&lt;hls::BORDER_DEFAULT, 0, 0, ap_int&lt;8>, int, 800, 1280, 3, 3>' to 'Filter2D' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:118:33)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.761+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Mat2AXIvideo&lt;24, 800, 1280, 4096>' to 'Mat2AXIvideo' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_io.h:78:50)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.759+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Sobel&lt;1, 0, 3, 0, 0, 800, 1280, 800, 1280>' to 'Sobel' (D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2619:5)" projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:39.757+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'img_0.data_stream.V' (ov5640_sobel_hls/src/ov5640_sobel.cpp:15)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:38.082+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'img_3.data_stream.V' (ov5640_sobel_hls/src/ov5640_sobel.cpp:18)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:37.947+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'img_1.data_stream.V' (ov5640_sobel_hls/src/ov5640_sobel.cpp:16)." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:37.944+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] D:/APP/VIVADO/Vivado/2018.3/common/technology/autopilot/hls/hls_axi_io.h:78: variable-indexed range selection may cause suboptimal QoR." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:37.701+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'lena.jpg'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="ov5640_sobel_hls" solutionName="solution1" date="2024-04-12T14:33:24.429+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

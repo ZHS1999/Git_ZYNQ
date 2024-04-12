@@ -1,0 +1,2 @@
+Project: Image sharpening.
+The HLS video library is used to convert the RGB image into grayscale value, then use the SOBEL operator to perform edge detection on the grayscale image, and then convert the obtained image into an RGB image.
